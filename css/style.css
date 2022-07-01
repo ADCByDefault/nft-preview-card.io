@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+html,
+body {
+    margin: 0;
+}
+
+:root {
+    /* Primary */
+
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+
+    /* Neutral */
+
+    --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+    --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    font-size: 18px;
+    background-color: var(--Very-dark-blue-main-BG);
+
+    min-height: 100vh;
+    padding: 2rem;
+    display: grid;
+    place-content: center;
+    gap: 3rem;
+}
+
+.card {
+    background-color: var(--Very-dark-blue-card-BG);
+    width: 300px;
+    padding: 1.2rem;
+    border-radius: 0.7rem;
+}
+
+.card .main-img {
+    position: relative;
+}
+
+.card .main-img img {
+    width: 100%;
+    border-radius: 0.5rem;
+    display: block;
+}
+
+.main-img:hover::after {
+    content: url(../images/icon-view.svg);
+    background-color: rgba(0, 255, 247, 0.3);
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+}
+
+.card h1 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.card .description {
+    color: var(--Soft-blue);
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.3rem;
+}
+
+.card .stats {
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    --icon-stat-spacing: 18px;
+}
+
+.card .stats .eth-count::before {
+    content: url(../images/icon-ethereum.svg);
+    position: absolute;
+    left: calc(var(--icon-stat-spacing) * -1);
+}
+
+.card .stats .eth-count {
+    color: var(--Cyan);
+    font-weight: 600;
+
+    position: relative;
+    left: var(--icon-stat-spacing);
+}
+
+.card .stats .time-count::before {
+    content: url(../images/icon-clock.svg);
+    position: absolute;
+    left: calc(var(--icon-stat-spacing) * -1);
+}
+
+.card .stats .time-count {
+    color: var(--Soft-blue);
+    position: relative;
+}
+
+.card hr {
+    border: none;
+    background-color: var(--Very-dark-blue-line);
+    height: 1px;
+    margin-block: 1rem;
+}
+
+.card .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card .profile-section .pfp {
+    width: 2rem;
+    border: 1px solid var(--White);
+    border-radius: 50%;
+}
+
+.card .profile-section .credits {
+    color: var(--Soft-blue);
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.card a {
+    color: var(--White);
+    text-decoration: none;
+
+    transition: color 0.2s;
+}
+
+.card a:hover {
+    color: var(--Cyan) !important;
+}
